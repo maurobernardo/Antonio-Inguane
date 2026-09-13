@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+:root {
+  --base: #122a22;
+  --surface: #17362b;
+  --surface-strong: #1e4534;
+  --text: #f3ecdf;
+  --muted: #9db3a8;
+  --gold: #d4a017;
+  --gold-hover: #e8bc4c;
+
+  --contact-bg: rgba(23, 58, 44, 0.95);
+  --contact-glow-1: rgba(47, 143, 106, 0.3);
+  --contact-glow-2: rgba(14, 42, 32, 0.6);
+  --contact-text: #f3ecdf;
+  --contact-accent: #d4a017;
+  --contact-accent-hover: #e8bc4c;
+  --contact-form-bg: rgba(255, 255, 255, 0.07);
+  --contact-form-border: rgba(255, 255, 255, 0.15);
+  --contact-input-bg: rgba(255, 255, 255, 0.1);
+  --contact-input-border: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="light"] {
+  --base: #faf8f3;
+  --surface: #ffffff;
+  --surface-strong: #f3ecdf;
+  --text: #1b4332;
+  --muted: #5c6f67;
+  --gold: #1b4332;
+  --gold-hover: #2f6b4f;
+
+  --contact-bg: rgba(243, 236, 223, 0.85);
+  --contact-glow-1: rgba(27, 67, 50, 0.1);
+  --contact-glow-2: rgba(27, 67, 50, 0.08);
+  --contact-text: #1b4332;
+  --contact-accent: #1b4332;
+  --contact-accent-hover: #2f6b4f;
+  --contact-form-bg: rgba(27, 67, 50, 0.05);
+  --contact-form-border: rgba(27, 67, 50, 0.15);
+  --contact-input-bg: #ffffff;
+  --contact-input-border: rgba(27, 67, 50, 0.18);
+}
+
+@theme {
+  --color-canvas: var(--base);
+  --color-surface: var(--surface);
+  --color-surface-strong: var(--surface-strong);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-gold: var(--gold);
+  --color-gold-hover: var(--gold-hover);
+
+  --font-display: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    "Noto Sans", sans-serif;
+  --font-body: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    "Noto Sans", sans-serif;
+
+  --text-xs: 0.8125rem;
+  --text-sm: 0.9375rem;
+  --text-base: 1.0625rem;
+  --text-lg: 1.375rem;
+  --text-xl: 1.875rem;
+  --text-2xl: 2.75rem;
+  --text-3xl: 3.75rem;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+html[data-theme="light"] {
+  color-scheme: light;
+}
+
+body {
+  background: var(--color-canvas);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.011em;
+  transition: background-color 200ms ease-out, color 200ms ease-out;
+}
+
+::selection {
+  background: var(--color-gold);
+  color: var(--color-canvas);
+}
+
+*:focus-visible {
+  outline: 3px solid var(--color-gold);
+  outline-offset: 3px;
+}
