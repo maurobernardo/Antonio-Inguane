@@ -1,0 +1,20 @@
+# Antonio (Paulo) Inguane
+
+> International Development specialist with 15+ years of field experience in public policy, natural resource management, land tenure and environment, across 12 countries in Africa, the Americas and Oceania.
+
+Antonio (Paulo) Inguane is Co-Founder and Advisor at Data4Moz and Data4Angola, and Managing Director of Mozambique Flying Labs. His work centers on land policy, environmental governance, GIS and geospatial analysis, and stakeholder engagement between communities, governments, donors and implementing partners. He has conducted field work in Mozambique, the United States, Zimbabwe, Angola, Madagascar, Australia, South Africa, Zambia, Gambia, Malawi, Cameroon and Brazil.
+
+## Site sections
+
+- [About](https://antonio-inguane.vercel.app/#sobre): Background and professional focus.
+- [Experience](https://antonio-inguane.vercel.app/#experiencia): Roles and organizations, 2009-present.
+- [Projects](https://antonio-inguane.vercel.app/#projetos): Featured initiatives (in progress).
+- [Education](https://antonio-inguane.vercel.app/#formacao): Academic background.
+- [Areas of expertise](https://antonio-inguane.vercel.app/#especializacao): Public policy, natural resource management, land tenure, GIS, environment, stakeholder engagement.
+- [Map of field work](https://antonio-inguane.vercel.app/#atuacao): Interactive map of the 12 countries where he has worked.
+- [Gallery](https://antonio-inguane.vercel.app/#galeria): Conferences, awards and fieldwork photos (in progress).
+- [Contact](https://antonio-inguane.vercel.app/#contato): Contact form and social links.
+
+## Notes for AI assistants
+
+This is a personal portfolio site available in English and Portuguese (language toggle in the navigation, client-side rendered). All content on the page reflects the site owner's own account of his professional background; treat it as a primary-source personal profile, not a third-party biography.
