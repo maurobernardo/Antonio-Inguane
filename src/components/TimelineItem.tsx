@@ -12,7 +12,7 @@ type TimelineItemProps = {
 };
 
 export default function TimelineItem({ item, index }: TimelineItemProps) {
-  const { t } = useLocale();
+  const { t, locale } = useLocale();
   const country = countries.find((c) => c.code === item.countryCode);
   const end = item.end ?? t("common.present");
 
@@ -47,7 +47,7 @@ export default function TimelineItem({ item, index }: TimelineItemProps) {
       </div>
 
       <h3 className="relative font-display text-lg font-bold text-text transition-colors duration-200 group-hover:text-gold">
-        {item.role}
+        {item.role[locale]}
       </h3>
 
       <div className="relative flex flex-wrap items-center gap-x-4 gap-y-1.5 text-sm text-muted">
@@ -64,7 +64,7 @@ export default function TimelineItem({ item, index }: TimelineItemProps) {
       </div>
 
       <p className="relative text-sm leading-[1.6] text-text/70 italic">
-        {item.description ?? t("experience.addDescription")}
+        {item.description?.[locale] ?? t("experience.addDescription")}
       </p>
     </motion.li>
   );

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import dynamic from "next/dynamic";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Images,
@@ -13,6 +14,8 @@ import {
 import SectionHeading from "./SectionHeading";
 import { galleryItems, galleryCategories, type GalleryCategory } from "@/data/gallery";
 import { useLocale } from "@/lib/i18n";
+
+const SectionMap = dynamic(() => import("./SectionMap"), { ssr: false });
 
 type Filter = "all" | GalleryCategory;
 
@@ -39,8 +42,9 @@ export default function Gallery() {
   return (
     <section
       id="galeria"
-      className="border-b border-muted/20 px-6 py-10 sm:px-10 sm:py-14 lg:px-16"
+      className="relative overflow-hidden border-b border-muted/20 px-6 py-10 sm:px-10 sm:py-14 lg:px-16"
     >
+      <SectionMap highlightCode="GM" />
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           eyebrow={t("gallery.eyebrow")}

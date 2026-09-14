@@ -1,12 +1,19 @@
 "use client";
 
 import { useState } from "react";
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { Mail, Loader2, MapPin, MessageCircle } from "lucide-react";
-import { LinkedInIcon, XIcon } from "./icons";
-import { socialLinks } from "@/data/social";
+import { LinkedInIcon, InstagramIcon, FacebookIcon, WhatsAppIcon } from "./icons";
+import { socialLinks, location } from "@/data/social";
 import SectionHeading from "./SectionHeading";
 import { useLocale } from "@/lib/i18n";
+
+const SectionMap = dynamic(() => import("./SectionMap"), { ssr: false });
+const LocationMap = dynamic(() => import("./LocationMap"), {
+  ssr: false,
+  loading: () => <div className="h-full w-full animate-pulse bg-[color:var(--contact-form-bg)]" />,
+});
 
 type FieldName = "name" | "email" | "message";
 
@@ -69,7 +76,7 @@ export default function Contact() {
 
   return (
     <section id="contato" className="px-6 py-10 sm:px-10 sm:py-14 lg:px-16">
-      <div className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl bg-[color:var(--contact-bg)] px-6 py-12 ring-1 ring-[color:var(--contact-form-border)] sm:px-12 sm:py-16">
+      <div className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl bg-[color:var(--contact-bg)] px-6 py-8 ring-1 ring-[color:var(--contact-form-border)] sm:px-12 sm:py-10">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-[color:var(--contact-glow-1)] blur-3xl"
@@ -78,6 +85,7 @@ export default function Contact() {
           aria-hidden="true"
           className="pointer-events-none absolute -bottom-20 -left-16 h-64 w-64 rounded-full bg-[color:var(--contact-glow-2)] blur-3xl"
         />
+        <SectionMap coordinates={location.coordinates} opacity={0.26} />
 
         <div className="relative grid gap-12 lg:grid-cols-[0.45fr_0.55fr] lg:gap-16">
           <div>
@@ -100,32 +108,55 @@ export default function Contact() {
                 {socialLinks.email}
               </a>
               <a
+                href={`https://wa.me/${socialLinks.whatsappNumber}?text=${encodeURIComponent(t("contact.whatsapp.message"))}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-[44px] items-center gap-3 rounded-xl px-3 -ml-3 text-sm font-medium text-[color:var(--contact-text)] transition-colors duration-150 hover:bg-[color:var(--contact-accent)]/10"
+              >
+                <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[color:var(--contact-accent)]/15 text-[color:var(--contact-accent)]">
+                  <WhatsAppIcon className="h-4 w-4" />
+                </span>
+                {socialLinks.whatsappDisplay}
+              </a>
+            </div>
+
+            <div className="mt-3 flex items-center gap-2">
+              <a
                 href={socialLinks.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-[44px] items-center gap-3 rounded-xl px-3 -ml-3 text-sm font-medium text-[color:var(--contact-text)] transition-colors duration-150 hover:bg-[color:var(--contact-accent)]/10"
+                aria-label="LinkedIn"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[color:var(--contact-accent)]/15 text-[color:var(--contact-accent)] transition-colors duration-150 hover:bg-[color:var(--contact-accent)]/25"
               >
-                <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[color:var(--contact-accent)]/15 text-[color:var(--contact-accent)]">
-                  <LinkedInIcon className="h-4 w-4" />
-                </span>
-                LinkedIn
+                <LinkedInIcon className="h-4 w-4" />
               </a>
               <a
-                href={socialLinks.x}
+                href={socialLinks.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-[44px] items-center gap-3 rounded-xl px-3 -ml-3 text-sm font-medium text-[color:var(--contact-text)] transition-colors duration-150 hover:bg-[color:var(--contact-accent)]/10"
+                aria-label="Instagram"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[color:var(--contact-accent)]/15 text-[color:var(--contact-accent)] transition-colors duration-150 hover:bg-[color:var(--contact-accent)]/25"
               >
-                <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[color:var(--contact-accent)]/15 text-[color:var(--contact-accent)]">
-                  <XIcon className="h-4 w-4" />
-                </span>
-                X (Twitter)
+                <InstagramIcon className="h-4 w-4" />
               </a>
-              <div className="inline-flex min-h-[44px] items-center gap-3 px-3 -ml-3 text-sm font-medium text-[color:var(--contact-text)]">
-                <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[color:var(--contact-accent)]/15 text-[color:var(--contact-accent)]">
-                  <MapPin aria-hidden="true" className="h-4 w-4" strokeWidth={1.75} />
-                </span>
-                {t("contact.location")}
+              <a
+                href={socialLinks.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[color:var(--contact-accent)]/15 text-[color:var(--contact-accent)] transition-colors duration-150 hover:bg-[color:var(--contact-accent)]/25"
+              >
+                <FacebookIcon className="h-4 w-4" />
+              </a>
+            </div>
+
+            <div className="relative mt-3 h-28 w-full overflow-hidden rounded-2xl ring-1 ring-[color:var(--contact-form-border)]">
+              <LocationMap />
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-[color:var(--contact-bg)] to-transparent px-3 pt-4 pb-2">
+                <p className="inline-flex items-center gap-1.5 text-xs font-semibold text-[color:var(--contact-text)]">
+                  <MapPin aria-hidden="true" className="h-3.5 w-3.5 text-[color:var(--contact-accent)]" strokeWidth={2} />
+                  {t("contact.location")}
+                </p>
               </div>
             </div>
           </div>

@@ -1,16 +1,20 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { Handshake } from "lucide-react";
 import { organizations } from "@/data/organizations";
 import { useLocale } from "@/lib/i18n";
+
+const SectionMap = dynamic(() => import("./SectionMap"), { ssr: false });
 
 export default function Organizations() {
   const { t } = useLocale();
   const track = [...organizations, ...organizations];
 
   return (
-    <section className="border-b border-muted/20 py-8">
+    <section className="relative overflow-hidden border-b border-muted/20 py-8">
+      <SectionMap highlightCode="ZM" />
       <div className="mx-auto max-w-6xl px-6 sm:px-10 lg:px-16">
         <motion.div
           initial={{ opacity: 0, y: 12 }}
@@ -23,6 +27,9 @@ export default function Organizations() {
             <Handshake aria-hidden="true" className="h-3.5 w-3.5" strokeWidth={2} />
             {t("organizations.title")}
           </span>
+          <p className="mt-2 text-center text-sm text-muted">
+            {t("organizations.subtitle")}
+          </p>
         </motion.div>
       </div>
 

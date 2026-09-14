@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import {
   User,
@@ -29,7 +29,28 @@ const links = [
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
+  const [activeId, setActiveId] = useState<string | null>(null);
   const { locale, setLocale, t } = useLocale();
+
+  useEffect(() => {
+    const sections = links
+      .map((link) => document.querySelector(link.href))
+      .filter((el): el is Element => el !== null);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveId(`#${entry.target.id}`);
+          }
+        });
+      },
+      { rootMargin: "-15% 0px -70% 0px", threshold: 0 },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <header className="sticky top-0 z-40 border-b border-muted/20 bg-canvas/90 px-6 backdrop-blur-sm sm:px-10 lg:px-16">
@@ -59,11 +80,15 @@ export default function Nav() {
           <ul className="mr-6 hidden gap-1 md:flex">
             {links.map((link) => {
               const Icon = link.icon;
+              const isActive = activeId === link.href;
               return (
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="inline-flex min-h-[44px] items-center gap-1.5 rounded-full px-3 text-sm font-medium text-gold transition-colors duration-150 hover:bg-surface hover:text-gold-hover"
+                    aria-current={isActive ? "true" : undefined}
+                    className={`inline-flex min-h-[44px] items-center gap-1.5 rounded-full px-3 text-sm font-medium transition-colors duration-150 hover:bg-surface hover:text-gold-hover ${
+                      isActive ? "bg-surface text-gold-hover" : "text-gold"
+                    }`}
                   >
                     <Icon aria-hidden="true" className="h-4 w-4" strokeWidth={1.75} />
                     {t(link.key)}
@@ -117,12 +142,16 @@ export default function Nav() {
           <ul className="flex flex-col gap-1">
             {links.map((link) => {
             const Icon = link.icon;
+            const isActive = activeId === link.href;
             return (
               <li key={link.href}>
                 <a
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="flex min-h-[44px] items-center gap-3 rounded-xl px-3 text-sm font-medium text-text transition-colors duration-150 hover:bg-surface hover:text-gold"
+                  aria-current={isActive ? "true" : undefined}
+                  className={`flex min-h-[44px] items-center gap-3 rounded-xl px-3 text-sm font-medium transition-colors duration-150 hover:bg-surface hover:text-gold ${
+                    isActive ? "bg-surface text-gold" : "text-text"
+                  }`}
                 >
                   <Icon aria-hidden="true" className="h-4 w-4" strokeWidth={1.75} />
                   {t(link.key)}

@@ -1,21 +1,31 @@
 "use client";
 
-import { Briefcase } from "lucide-react";
+import { useState } from "react";
+import dynamic from "next/dynamic";
+import { Briefcase, ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
 import TimelineItem from "./TimelineItem";
 import SectionHeading from "./SectionHeading";
 import { experience } from "@/data/experience";
 import { useLocale } from "@/lib/i18n";
 
+const SectionMap = dynamic(() => import("./SectionMap"), { ssr: false });
+
+const COLLAPSED_COUNT = 8;
+
 export default function Experience() {
   const { t } = useLocale();
-  const rows = Math.ceil(experience.length / 2);
+  const [expanded, setExpanded] = useState(false);
+  const visibleItems = expanded ? experience : experience.slice(0, COLLAPSED_COUNT);
+  const rows = Math.ceil(visibleItems.length / 2);
+  const hasMore = experience.length > COLLAPSED_COUNT;
 
   return (
     <section
       id="experiencia"
-      className="border-b border-muted/20 bg-surface/40 px-6 py-10 sm:px-10 sm:py-14 lg:px-16"
+      className="relative overflow-hidden border-b border-muted/20 bg-surface/40 px-6 py-10 sm:px-10 sm:py-14 lg:px-16"
     >
+      <SectionMap highlightCode="MZ" />
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           eyebrow={t("experience.eyebrow")}
@@ -46,15 +56,34 @@ export default function Experience() {
           ))}
 
           <ol className="relative grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-x-14 sm:gap-y-6">
-            {experience.map((item, index) => (
+            {visibleItems.map((item, index) => (
               <TimelineItem
-                key={`${item.org}-${item.start}`}
+                key={`${item.role.en}-${item.org}-${item.start}-${item.countryCode}`}
                 item={item}
                 index={index}
               />
             ))}
           </ol>
         </div>
+
+        {hasMore && (
+          <div className="mt-8 flex justify-center">
+            <button
+              type="button"
+              onClick={() => setExpanded((e) => !e)}
+              className="inline-flex min-h-[44px] items-center gap-2 rounded-full border border-muted/30 px-6 text-sm font-semibold text-text transition-colors duration-150 hover:border-gold hover:text-gold"
+            >
+              {expanded
+                ? t("experience.showLess")
+                : t("experience.showMore", { count: String(experience.length - COLLAPSED_COUNT) })}
+              <ChevronDown
+                aria-hidden="true"
+                className={`h-4 w-4 transition-transform duration-200 ${expanded ? "rotate-180" : ""}`}
+                strokeWidth={2}
+              />
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

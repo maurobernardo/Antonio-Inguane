@@ -14,6 +14,7 @@ import {
 } from "react-simple-maps";
 import { MapPin, Globe2, Plus, Minus, RotateCcw } from "lucide-react";
 import SectionHeading from "./SectionHeading";
+import SectionMap from "./SectionMap";
 import StampIcon from "./StampIcon";
 import { countries, type Country } from "@/data/countries";
 import { experience } from "@/data/experience";
@@ -41,7 +42,7 @@ function firstYear(code: string): number | null {
 }
 
 export default function CountryMap() {
-  const { t } = useLocale();
+  const { t, locale } = useLocale();
   const [hovered, setHovered] = useState<string | null>(null);
   const [selected, setSelected] = useState<Country>(countries[0]);
   const [position, setPosition] = useState({ coordinates: [12, 5] as [number, number], zoom: 1 });
@@ -87,8 +88,9 @@ export default function CountryMap() {
   return (
     <section
       id="atuacao"
-      className="border-b border-muted/20 px-6 py-10 sm:px-10 sm:py-14 lg:px-16"
+      className="relative overflow-hidden border-b border-muted/20 px-6 py-10 sm:px-10 sm:py-14 lg:px-16"
     >
+      <SectionMap highlightCode="CM" opacity={0.18} />
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           eyebrow={t("map.eyebrow")}
@@ -97,7 +99,7 @@ export default function CountryMap() {
           icon={Globe2}
         />
 
-        <div className="mt-10 grid gap-6 lg:grid-cols-[1.4fr_1fr] lg:items-stretch">
+        <div className="mt-10 grid gap-6 lg:grid-cols-[1.4fr_1fr] lg:items-start">
           <div className="relative overflow-hidden rounded-2xl bg-[radial-gradient(circle_at_30%_20%,var(--color-surface)_0%,var(--color-canvas)_70%)] ring-1 ring-muted/15">
             <ComposableMap
               projectionConfig={{ scale: 148 }}
@@ -250,7 +252,7 @@ export default function CountryMap() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.25, ease: "easeOut" }}
-              className="flex flex-col rounded-2xl bg-surface p-6 ring-1 ring-muted/15"
+              className="flex max-h-[520px] flex-col rounded-2xl bg-surface p-6 ring-1 ring-muted/15"
             >
               <div className="flex items-center gap-4">
                 <StampIcon code={selected.code} label={selectedName} size={56} />
@@ -269,17 +271,17 @@ export default function CountryMap() {
                 </div>
               </div>
 
-              <div className="mt-5 flex-1 space-y-4 border-t border-muted/15 pt-5">
+              <div className="mt-5 min-h-0 flex-1 space-y-4 overflow-y-auto border-t border-muted/15 pt-5 pr-1">
                 {roles.length > 0 ? (
                   roles.map((item) => (
-                    <div key={`${item.org}-${item.start}`} className="flex gap-3">
+                    <div key={`${item.role.en}-${item.org}-${item.start}`} className="flex gap-3">
                       <MapPin
                         aria-hidden="true"
                         className="mt-0.5 h-4 w-4 shrink-0 text-gold"
                         strokeWidth={1.75}
                       />
                       <div>
-                        <p className="text-sm font-bold text-text">{item.role}</p>
+                        <p className="text-sm font-bold text-text">{item.role[locale]}</p>
                         <p className="text-xs text-muted">
                           {item.org}; {item.start} - {item.end ?? t("common.present")}
                         </p>

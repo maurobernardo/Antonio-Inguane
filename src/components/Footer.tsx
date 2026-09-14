@@ -1,10 +1,13 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import { Mail, MapPin, ArrowUp } from "lucide-react";
-import { LinkedInIcon, XIcon } from "./icons";
+import { LinkedInIcon, InstagramIcon, FacebookIcon, WhatsAppIcon } from "./icons";
 import { socialLinks } from "@/data/social";
 import { useLocale } from "@/lib/i18n";
+
+const SectionMap = dynamic(() => import("./SectionMap"), { ssr: false });
 
 const links = [
   { href: "#sobre", key: "nav.sobre" },
@@ -20,7 +23,8 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-muted/20 bg-surface px-6 pt-14 pb-8 sm:px-10 lg:px-16">
+    <footer className="relative overflow-hidden border-t border-muted/20 bg-surface/50 px-6 pt-14 pb-8 sm:px-10 lg:px-16">
+      <SectionMap highlightCode="ZW" />
       <div className="mx-auto max-w-6xl">
         <div className="grid gap-10 sm:grid-cols-[1.2fr_0.8fr_0.8fr]">
           <div>
@@ -91,13 +95,31 @@ export default function Footer() {
                   <LinkedInIcon className="h-4 w-4" />
                 </a>
                 <a
-                  href={socialLinks.x}
+                  href={socialLinks.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="X"
+                  aria-label="Instagram"
                   className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-muted/30 text-text transition-colors duration-150 hover:border-gold hover:text-gold"
                 >
-                  <XIcon className="h-4 w-4" />
+                  <InstagramIcon className="h-4 w-4" />
+                </a>
+                <a
+                  href={socialLinks.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-muted/30 text-text transition-colors duration-150 hover:border-gold hover:text-gold"
+                >
+                  <FacebookIcon className="h-4 w-4" />
+                </a>
+                <a
+                  href={`https://wa.me/${socialLinks.whatsappNumber}?text=${encodeURIComponent(t("contact.whatsapp.message"))}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="WhatsApp"
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-muted/30 text-text transition-colors duration-150 hover:border-gold hover:text-gold"
+                >
+                  <WhatsAppIcon className="h-4 w-4" />
                 </a>
               </li>
             </ul>

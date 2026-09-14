@@ -1,9 +1,12 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { Quote, User } from "lucide-react";
 import SectionHeading from "./SectionHeading";
 import { useLocale } from "@/lib/i18n";
+
+const SectionMap = dynamic(() => import("./SectionMap"), { ssr: false });
 
 export default function About() {
   const { t } = useLocale();
@@ -18,8 +21,9 @@ export default function About() {
   return (
     <section
       id="sobre"
-      className="border-y border-muted/20 bg-surface px-6 py-10 sm:px-10 sm:py-14 lg:px-16"
+      className="relative overflow-hidden border-y border-muted/20 bg-surface/50 px-6 py-10 sm:px-10 sm:py-14 lg:px-16"
     >
+      <SectionMap highlightCode="MZ" />
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           eyebrow={t("about.eyebrow")}

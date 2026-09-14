@@ -1,18 +1,21 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Mail, ArrowRight, ArrowDown, Download } from "lucide-react";
 import StampIcon from "./StampIcon";
-import { LinkedInIcon, XIcon } from "./icons";
+import { LinkedInIcon, InstagramIcon, FacebookIcon, WhatsAppIcon } from "./icons";
 import { socialLinks } from "@/data/social";
 import { useLocale } from "@/lib/i18n";
+
+const HeroMap = dynamic(() => import("./HeroMap"), { ssr: false });
 
 export default function Hero() {
   const { t } = useLocale();
 
   const stats = [
-    { value: "15+", label: t("hero.stat.years") },
+    { value: "19+", label: t("hero.stat.years") },
     { value: "12", label: t("hero.stat.countries") },
     { value: "PT/ES", label: t("hero.stat.languages") },
   ];
@@ -22,6 +25,7 @@ export default function Hero() {
       id="inicio"
       className="relative isolate overflow-hidden px-6 pt-10 pb-10 sm:px-10 sm:pt-14 sm:pb-14 lg:px-16"
     >
+      <HeroMap />
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 -z-10"
@@ -117,7 +121,7 @@ export default function Hero() {
             <a
               href="/cv-antonio-inguane.pdf"
               download
-              className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full border border-dashed border-muted/30 px-6 text-sm font-semibold tracking-wide text-muted transition-colors duration-150 hover:border-gold hover:text-gold"
+              className="inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full border border-muted/30 px-6 text-sm font-semibold tracking-wide text-text transition-colors duration-150 hover:border-gold hover:text-gold"
             >
               <Download aria-hidden="true" className="h-4 w-4" strokeWidth={1.75} />
               {t("hero.cta.cv")}
@@ -141,13 +145,31 @@ export default function Hero() {
                 <LinkedInIcon className="h-[18px] w-[18px]" />
               </a>
               <a
-                href={socialLinks.x}
+                href={socialLinks.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="X"
+                aria-label="Instagram"
                 className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-muted/30 text-text transition-colors duration-150 hover:border-gold hover:text-gold"
               >
-                <XIcon className="h-[18px] w-[18px]" />
+                <InstagramIcon className="h-[18px] w-[18px]" />
+              </a>
+              <a
+                href={socialLinks.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-muted/30 text-text transition-colors duration-150 hover:border-gold hover:text-gold"
+              >
+                <FacebookIcon className="h-[18px] w-[18px]" />
+              </a>
+              <a
+                href={`https://wa.me/${socialLinks.whatsappNumber}?text=${encodeURIComponent(t("contact.whatsapp.message"))}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-muted/30 text-text transition-colors duration-150 hover:border-gold hover:text-gold"
+              >
+                <WhatsAppIcon className="h-[18px] w-[18px]" />
               </a>
             </div>
           </motion.div>

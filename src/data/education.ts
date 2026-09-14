@@ -8,11 +8,12 @@ export type EducationItem = {
 
 export const education: EducationItem[] = [
   {
-    institution: "Maastricht University",
+    institution: "Maastricht University (UNU-MERIT)",
     program: {
-      en: "Governance and Policy Analysis",
-      pt: "Governanca e Analise de Politicas",
+      en: "PhD Candidate, Governance and Policy Analysis",
+      pt: "Doutoramento em curso, Governanca e Analise de Politicas",
     },
+    note: "Exp. 2026",
   },
   {
     institution: "UC San Diego Extended Studies",
@@ -29,9 +30,10 @@ export const education: EducationItem[] = [
   {
     institution: "Australian National University",
     program: {
-      en: "Master, Environmental Management and Development",
+      en: "MSc, Environmental Management and Development",
       pt: "Mestrado em Gestao Ambiental e Desenvolvimento",
     },
+    note: "2015",
   },
   {
     institution: "Eduardo Mondlane University",

@@ -9,7 +9,7 @@
   --gold: #d4a017;
   --gold-hover: #e8bc4c;
 
-  --contact-bg: rgba(23, 58, 44, 0.95);
+  --contact-bg: rgba(23, 58, 44, 0.55);
   --contact-glow-1: rgba(47, 143, 106, 0.3);
   --contact-glow-2: rgba(14, 42, 32, 0.6);
   --contact-text: #f3ecdf;
@@ -30,16 +30,16 @@
   --gold: #1b4332;
   --gold-hover: #2f6b4f;
 
-  --contact-bg: rgba(243, 236, 223, 0.85);
+  --contact-bg: rgba(243, 236, 223, 0.4);
   --contact-glow-1: rgba(27, 67, 50, 0.1);
   --contact-glow-2: rgba(27, 67, 50, 0.08);
   --contact-text: #1b4332;
   --contact-accent: #1b4332;
   --contact-accent-hover: #2f6b4f;
-  --contact-form-bg: rgba(27, 67, 50, 0.05);
+  --contact-form-bg: rgba(27, 67, 50, 0.04);
   --contact-form-border: rgba(27, 67, 50, 0.15);
-  --contact-input-bg: #ffffff;
-  --contact-input-border: rgba(27, 67, 50, 0.18);
+  --contact-input-bg: rgba(27, 67, 50, 0.04);
+  --contact-input-border: rgba(27, 67, 50, 0.22);
 }
 
 @theme {

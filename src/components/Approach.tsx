@@ -1,16 +1,20 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { Compass } from "lucide-react";
 import SectionHeading from "./SectionHeading";
 import { approachSteps } from "@/data/approach";
 import { useLocale } from "@/lib/i18n";
 
+const SectionMap = dynamic(() => import("./SectionMap"), { ssr: false });
+
 export default function Approach() {
   const { t } = useLocale();
 
   return (
-    <section className="border-b border-muted/20 px-6 py-10 sm:px-10 sm:py-14 lg:px-16">
+    <section className="relative overflow-hidden border-b border-muted/20 px-6 py-10 sm:px-10 sm:py-14 lg:px-16">
+      <SectionMap highlightCode="ZA" />
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           eyebrow={t("approach.eyebrow")}
@@ -34,13 +38,13 @@ export default function Approach() {
                 {i < approachSteps.length - 1 && (
                   <span
                     aria-hidden="true"
-                    className="absolute top-6 left-full hidden h-px w-8 bg-gradient-to-r from-muted/30 to-transparent lg:block"
+                    className="absolute top-6 left-full hidden h-px w-8 bg-gradient-to-r from-gold/60 to-transparent lg:block"
                   />
                 )}
 
                 <span
                   aria-hidden="true"
-                  className="font-display text-5xl font-extrabold text-muted/15 select-none"
+                  className="font-display text-5xl font-extrabold text-gold/40 select-none"
                 >
                   {step.number}
                 </span>

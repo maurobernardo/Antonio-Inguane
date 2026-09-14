@@ -13,7 +13,7 @@ const inter = Inter({
 
 const TITLE = "Antonio Inguane; International Development, Land and Environment";
 const DESCRIPTION =
-  "Antonio (Paulo) Inguane, Co-Founder and Advisor at Data4Moz and Data4Angola, Managing Director of Mozambique Flying Labs. 15+ years in public policy, natural resource management, land tenure and environment worldwide.";
+  "Antonio (Paulo) Inguane, Co-Founder and Advisor at Data4Moz and Data4Angola, Managing Director of Mozambique Flying Labs. 19+ years in public policy, natural resource management, land tenure and environment worldwide.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: TITLE,
     description:
-      "15+ years of experience in public policy, natural resource management, land tenure and environment across Mozambique, Angola and a dozen other countries.",
+      "19+ years of experience in public policy, natural resource management, land tenure and environment across Mozambique, Angola and a dozen other countries.",
     url: SITE_URL,
     siteName: "Antonio Inguane",
     type: "profile",
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: TITLE,
     description:
-      "15+ years of experience in public policy, natural resource management, land tenure and environment across Mozambique, Angola and a dozen other countries.",
+      "19+ years of experience in public policy, natural resource management, land tenure and environment across Mozambique, Angola and a dozen other countries.",
     images: ["/perfil.jpg"],
   },
 };

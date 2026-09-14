@@ -26,7 +26,7 @@ const en: Dict = {
   "theme.dark": "Switch to dark mode",
   "lang.switch": "Switch to Portuguese",
 
-  "hero.eyebrow": "Field notebook; 15+ years, 12 countries",
+  "hero.eyebrow": "Field notebook; 19+ years, 12 countries",
   "hero.role": "Co-Founder & Advisor @ Data4Moz | Data4Angola; Managing Director, Mozambique Flying Labs",
   "hero.summary":
     "International Development specialist focused on public policy, natural resource management, land tenure and environment; field work across Africa, the Americas and Oceania.",
@@ -41,8 +41,8 @@ const en: Dict = {
   "about.eyebrow": "Who I am",
   "about.title": "About",
   "about.subtitle":
-    "15+ years turning land and environmental policy into results on the ground.",
-  "about.lead.intro": "Antonio (Paulo) Inguane is an International Development specialist with more than 15 years dedicated to",
+    "19+ years turning land and environmental policy into results on the ground.",
+  "about.lead.intro": "Antonio (Paulo) Inguane is an International Development specialist with more than 19 years dedicated to",
   "about.lead.p1": "public policy",
   "about.lead.p2": "natural resource management",
   "about.lead.p3": "land tenure",
@@ -51,7 +51,7 @@ const en: Dict = {
     "Currently Co-Founder and Advisor at Data4Moz and Data4Angola, and Managing Director of Mozambique Flying Labs. Throughout his career, he has conducted field work in Mozambique, the United States, Zimbabwe, Angola, Madagascar, Australia, South Africa, Zambia, Gambia, Malawi, Cameroon and Brazil.",
   "about.p2":
     "He has built a practice grounded in land policy, environmental governance and community and stakeholder engagement across very different contexts; always focused on concrete results for communities and institutions.",
-  "about.fact.years": "15+ years of experience",
+  "about.fact.years": "19+ years of experience",
   "about.fact.countries": "12 countries of field work",
   "about.fact.languages": "Native PT; fluent ES",
   "about.fact.focus": "Land, environment and data",
@@ -75,10 +75,13 @@ const en: Dict = {
   "experience.eyebrow": "Professional path",
   "experience.title": "Experience",
   "experience.subtitle":
-    "A decade and a half of projects in public policy, land and environment; each role stamped with the country where the work happened.",
+    "Nearly two decades of projects in public policy, land and environment; each role stamped with the country where the work happened.",
   "experience.badge": "Experience",
+  "experience.showMore": "Show {count} more roles",
+  "experience.showLess": "Show less",
 
   "organizations.title": "Organizations and partners",
+  "organizations.subtitle": "Public, multilateral and private-sector organizations worked with over the years.",
 
   "education.eyebrow": "Academic background",
   "education.title": "Education",
@@ -107,7 +110,8 @@ const en: Dict = {
   "contact.eyebrow": "Let's talk",
   "contact.title": "Contact",
   "contact.subtitle": "For collaborations, consulting work, or conversations about land, environment and data.",
-  "contact.location": "San Diego, United States",
+  "contact.location": "Oceanside, California, United States",
+  "contact.whatsapp.message": "Hi Antonio, I found your portfolio and would like to talk.",
   "contact.form.name": "Name",
   "contact.form.email": "Email",
   "contact.form.message": "Message",
@@ -121,10 +125,10 @@ const en: Dict = {
   "contact.error.message": "Please write a message.",
   "contact.error.messageShort": "Your message needs at least 10 characters.",
 
-  "footer.tagline": "Public policy, land and environment; 15+ years in the field",
+  "footer.tagline": "Public policy, land and environment; 19+ years in the field",
   "footer.nav": "Navigation",
   "footer.connect": "Connect",
-  "footer.location": "San Diego, United States",
+  "footer.location": "Oceanside, California, United States",
   "footer.rights": "All rights reserved.",
   "footer.backToTop": "Back to top",
 
@@ -166,11 +170,7 @@ const en: Dict = {
   "projects.eyebrow": "Selected work",
   "projects.title": "Featured Projects",
   "projects.subtitle":
-    "A closer look at flagship initiatives; details to be added soon.",
-  "projects.placeholder.title": "[ADD PROJECT TITLE]",
-  "projects.placeholder.org": "[ADD ORGANIZATION]",
-  "projects.placeholder.desc": "[ADD PROJECT DESCRIPTION]",
-  "projects.placeholder.tag": "[ADD TAG]",
+    "Land documentation, GIS and community governance initiatives across three continents.",
 
   "gallery.eyebrow": "In the field",
   "gallery.title": "Gallery",
@@ -197,7 +197,7 @@ const pt: Dict = {
   "theme.dark": "Ativar modo escuro",
   "lang.switch": "Mudar para ingles",
 
-  "hero.eyebrow": "Caderno de campo; 15+ anos, 12 paises",
+  "hero.eyebrow": "Caderno de campo; 19+ anos, 12 paises",
   "hero.role": "Co-Founder & Advisor @ Data4Moz | Data4Angola; Managing Director, Mozambique Flying Labs",
   "hero.summary":
     "Especialista em Desenvolvimento Internacional com foco em politicas publicas, gestao de recursos naturais, direitos fundiarios e ambiente; trabalho de campo em Africa, nas Americas e na Oceania.",
@@ -212,8 +212,8 @@ const pt: Dict = {
   "about.eyebrow": "Quem sou",
   "about.title": "Sobre",
   "about.subtitle":
-    "15+ anos a transformar politicas de terra e ambiente em resultados concretos no terreno.",
-  "about.lead.intro": "Antonio (Paulo) Inguane e especialista em Desenvolvimento Internacional com mais de 15 anos dedicados a",
+    "19+ anos a transformar politicas de terra e ambiente em resultados concretos no terreno.",
+  "about.lead.intro": "Antonio (Paulo) Inguane e especialista em Desenvolvimento Internacional com mais de 19 anos dedicados a",
   "about.lead.p1": "politicas publicas",
   "about.lead.p2": "gestao de recursos naturais",
   "about.lead.p3": "direitos fundiarios",
@@ -222,7 +222,7 @@ const pt: Dict = {
     "Atualmente e Co-Founder e Advisor na Data4Moz e na Data4Angola, e Managing Director da Mozambique Flying Labs. Ao longo da carreira, conduziu trabalho de campo em Mocambique, Estados Unidos, Zimbabue, Angola, Madagascar, Australia, Africa do Sul, Zambia, Gambia, Malawi, Camaroes e Brasil.",
   "about.p2":
     "Construiu uma pratica assente em politicas de terra, governanca ambiental e envolvimento de comunidades e stakeholders em contextos muito distintos; sempre com foco em resultados concretos para comunidades e instituicoes.",
-  "about.fact.years": "15+ anos de experiencia",
+  "about.fact.years": "19+ anos de experiencia",
   "about.fact.countries": "12 paises de campo",
   "about.fact.languages": "PT nativo; ES fluente",
   "about.fact.focus": "Terra, ambiente e dados",
@@ -246,10 +246,13 @@ const pt: Dict = {
   "experience.eyebrow": "Percurso profissional",
   "experience.title": "Experiencia",
   "experience.subtitle":
-    "Uma decada e meia de projetos em politicas publicas, terra e ambiente; cada cargo carimbado com o pais onde o trabalho aconteceu.",
+    "Quase duas decadas de projetos em politicas publicas, terra e ambiente; cada cargo carimbado com o pais onde o trabalho aconteceu.",
   "experience.badge": "Experiencia",
+  "experience.showMore": "Ver mais {count} cargos",
+  "experience.showLess": "Ver menos",
 
   "organizations.title": "Organizacoes e parceiros",
+  "organizations.subtitle": "Organizacoes publicas, multilaterais e do setor privado com quem ja trabalhei.",
 
   "education.eyebrow": "Formacao academica",
   "education.title": "Formacao",
@@ -278,7 +281,8 @@ const pt: Dict = {
   "contact.eyebrow": "Vamos conversar",
   "contact.title": "Contacto",
   "contact.subtitle": "Para colaboracoes, consultorias ou conversas sobre terra, ambiente e dados.",
-  "contact.location": "San Diego, Estados Unidos",
+  "contact.location": "Oceanside, California, Estados Unidos",
+  "contact.whatsapp.message": "Ola Antonio, encontrei o seu portfolio e gostaria de conversar.",
   "contact.form.name": "Nome",
   "contact.form.email": "E-mail",
   "contact.form.message": "Mensagem",
@@ -292,10 +296,10 @@ const pt: Dict = {
   "contact.error.message": "Escreva uma mensagem.",
   "contact.error.messageShort": "A mensagem precisa de pelo menos 10 caracteres.",
 
-  "footer.tagline": "Politicas publicas, terra e ambiente; 15+ anos de campo",
+  "footer.tagline": "Politicas publicas, terra e ambiente; 19+ anos de campo",
   "footer.nav": "Navegacao",
   "footer.connect": "Ligacoes",
-  "footer.location": "San Diego, Estados Unidos",
+  "footer.location": "Oceanside, California, Estados Unidos",
   "footer.rights": "Todos os direitos reservados.",
   "footer.backToTop": "Voltar ao topo",
 
@@ -337,11 +341,7 @@ const pt: Dict = {
   "projects.eyebrow": "Trabalho selecionado",
   "projects.title": "Projetos em Destaque",
   "projects.subtitle":
-    "Um olhar sobre iniciativas de referencia; detalhes a adicionar em breve.",
-  "projects.placeholder.title": "[ADICIONAR TITULO DO PROJETO]",
-  "projects.placeholder.org": "[ADICIONAR ORGANIZACAO]",
-  "projects.placeholder.desc": "[ADICIONAR DESCRICAO DO PROJETO]",
-  "projects.placeholder.tag": "[ADICIONAR TAG]",
+    "Documentacao de terra, SIG e iniciativas de governanca comunitaria em tres continentes.",
 
   "gallery.eyebrow": "No terreno",
   "gallery.title": "Galeria",
