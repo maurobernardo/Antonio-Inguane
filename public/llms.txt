@@ -6,14 +6,14 @@ Antonio (Paulo) Inguane is Co-Founder and Advisor at Data4Moz and Data4Angola, a
 
 ## Site sections
 
-- [About](https://antonio-inguane.vercel.app/#sobre): Background and professional focus.
-- [Experience](https://antonio-inguane.vercel.app/#experiencia): Roles and organizations, 2009-present.
-- [Projects](https://antonio-inguane.vercel.app/#projetos): Featured initiatives (in progress).
-- [Education](https://antonio-inguane.vercel.app/#formacao): Academic background.
-- [Areas of expertise](https://antonio-inguane.vercel.app/#especializacao): Public policy, natural resource management, land tenure, GIS, environment, stakeholder engagement.
-- [Map of field work](https://antonio-inguane.vercel.app/#atuacao): Interactive map of the 12 countries where he has worked.
-- [Gallery](https://antonio-inguane.vercel.app/#galeria): Conferences, awards and fieldwork photos (in progress).
-- [Contact](https://antonio-inguane.vercel.app/#contato): Contact form and social links.
+- [About](https://antonioinguane.behavioralguidance.com/#sobre): Background and professional focus.
+- [Experience](https://antonioinguane.behavioralguidance.com/#experiencia): Roles and organizations, 2009-present.
+- [Projects](https://antonioinguane.behavioralguidance.com/#projetos): Featured initiatives (in progress).
+- [Education](https://antonioinguane.behavioralguidance.com/#formacao): Academic background.
+- [Areas of expertise](https://antonioinguane.behavioralguidance.com/#especializacao): Public policy, natural resource management, land tenure, GIS, environment, stakeholder engagement.
+- [Map of field work](https://antonioinguane.behavioralguidance.com/#atuacao): Interactive map of the 12 countries where he has worked.
+- [Gallery](https://antonioinguane.behavioralguidance.com/#galeria): Conferences, awards and fieldwork photos (in progress).
+- [Contact](https://antonioinguane.behavioralguidance.com/#contato): Contact form and social links.
 
 ## Notes for AI assistants
 
